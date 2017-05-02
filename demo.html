@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>dropMenu.js</title>
+		<meta charset="utf-8">
+		<link href="dropMenu.css" rel="stylesheet">
+		<script src="dropMenu.js"></script>
+
+		<style>
+			#leftPicker {
+				position: absolute;
+				top: 20px;
+				left: 200px;
+			}
+
+			#rightPicker {
+				position: absolute;
+				top: 20px;
+				right: 200px;
+				outline: 0;
+			}
+		</style>
+
+	</head>
+	<body>
+		<a href="javascript:void(0)" class="keke" id="leftPicker">点我</a>
+		<input type="text"value="其他" id="rightPicker">
+	</body>
+	<script type="text/javascript">
+	var data1 = ['北京', '上海', '广州', '福建1', '福建2', '福建3', '长文测试长文测试长文测试长文测试长文测试长文测试长文测试长文测试']
+	var data2 = [
+		{
+			"value": "鹅鹅鹅",
+		}, {
+			"value": "曲项向天歌",
+		}, {
+			"value": "白日依山尽",
+		}, {
+			"value": "黄河入海流",
+		}, {
+			"value": "会当临绝顶",
+		}, {
+			"value": "一览众山小",
+		}, {
+			"value": "安能摧眉折腰事权贵",
+		}, {
+			"value": "使我不得开心颜",
+		}, {
+			"value": "葫芦娃救爷爷",
+		}, {
+			"value": "一个一个上",
+		}, {
+			"value": "我劝天公重抖擞",
+		}, {
+			"value": "不拘一格降人才",
+		}
+	]
+
+
+	new DropMeun({
+		'id': 'leftPicker',
+		"data": data1,
+		"dataSrc": "value",
+		"ableSearch": true,
+		// "style": {
+		// 	"width": 240,
+		// 	"maxHeight": 340,
+		// 	"left": 0,
+		// 	"top": 2,
+		// 	"initPos": "right",
+		// },
+		"item": {
+			// "className": "itemName",
+			"render": function(data, full) {
+				return '---' + data + '---'
+			},
+			"callbakc": function(dataSrc, picker, full, all) {
+				alert('click ' + dataSrc)
+			}
+		}
+	})
+
+	var a1 = new DropMeun({
+		'id': 'rightPicker',
+		"data": data2,
+		"dataSrc": "value",
+		// "ableSearch": true,
+		"style": {
+			"width": 240,
+			"maxHeight": 280,
+			"left": 0,
+			"top": 5,
+			"initPos": "right",
+		},
+		"item": {
+			"className": "itemName",
+			// "render": function(data, full) {
+			// 	return '---' + data + '---'
+			// },
+			"callbakc": function(dataSrc, picker, full, all) {
+				console.log('click ' + dataSrc)
+			}
+		}
+	})
+
+
+	</script>
+</html>
