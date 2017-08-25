@@ -1,10 +1,6 @@
-/*!
- * Author: huangdehao
- * Email: jyyz20090429@163.com
- * Date:  2017-2-25
- */
-(function(vq0599) {
- window.DropMeun = vq0599
+
+(function(sunshine) {
+ window.DropMeun = sunshine
 })(function() {
 
 	function DropMeun(option) {
